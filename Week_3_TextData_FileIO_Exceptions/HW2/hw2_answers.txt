@@ -1,0 +1,6 @@
+Saransh Rakshak
+answer4 = 1001
+answer5 = 2002
+answer6 = 81
+answer7 = 64
+Homework 2 is done!!!
