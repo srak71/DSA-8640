@@ -7482,7 +7482,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Pok%C3%A9mon-Analysis-Final-Project">Pokémon Analysis Final Project<a class="anchor-link" href="#Pok%C3%A9mon-Analysis-Final-Project">¶</a></h1><h4 id="Author:-Saransh-Rakshak-%7C-Course:-DSA-8640-%7C-Due:-Dec.-11,-2024">Author: Saransh Rakshak | Course: DSA-8640 | Due: Dec. 11, 2024<a class="anchor-link" href="#Author:-Saransh-Rakshak-%7C-Course:-DSA-8640-%7C-Due:-Dec.-11,-2024">¶</a></h4>
+<center><h1 style="font-size: 64px;">Pokémon Analysis Final Project</h1></center>
+<center><h1 style="font-size: 36px;">Author: Saransh Rakshak | Course: DSA-8640 | Due: Dec. 11, 2024</h1></center>
+<p><img alt="Cover Image" src="poke_cover_image.jpg"/></p>
 </div>
 </div>
 </div>
@@ -7491,7 +7493,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import libraries</span>
@@ -7500,34 +7502,11 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="s2">"pokemon_data/"</span>
 
-<span class="n">data_folders</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">"2016-07-21"</span><span class="p">,</span>
-    <span class="s2">"2016-07-22"</span><span class="p">,</span>
-    <span class="s2">"2016-07-23"</span><span class="p">,</span>
-    <span class="s2">"2016-07-24"</span><span class="p">,</span>
-    <span class="s2">"2016-07-25"</span><span class="p">,</span>
-    <span class="s2">"2016-07-26"</span><span class="p">,</span>
-    <span class="s2">"2016-07-27"</span><span class="p">,</span>
-    <span class="s2">"2016-07-28"</span><span class="p">,</span>
-    <span class="s2">"2016-07-29"</span><span class="p">,</span>
-    <span class="s2">"2016-07-30"</span><span class="p">,</span>
-    <span class="s2">"2016-07-31"</span>
-    <span class="p">]</span>
+<span class="c1"># save data locations/paths</span>
+<span class="n">data_path</span> <span class="o">=</span> <span class="s2">"pokemon_data/"</span>
+<span class="n">data_folders</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+<span class="n">data_quick</span> <span class="o">=</span> <span class="n">data_folders</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -7540,70 +7519,99 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Part-1:-Web-Scrapping">Part 1: Web Scrapping<a class="anchor-link" href="#Part-1:-Web-Scrapping">¶</a></h2><p>The first step is to extract various values from the raw HTML files. You can use BeautifulSoup or other Python modules.</p>
-<h1 id="%F0%9F%85%90">🅐<a class="anchor-link" href="#%F0%9F%85%90">¶</a></h1><blockquote>
-<p>From all the iOS pages (ending with “_ios.html”), extract (i) number of customer ratings in the Current Version (let’s call it <em>ios_current_ratings</em>); and (ii) number of customer ratings in All Versions (<em>ios_all_ratings</em>). For example, the extracted values should be: 4688, 106508 for the <em>“2016-07-21/00_00_pokemon_ios.html”</em> file. There are 2 values from iOS pages.</p>
+<div style="background-image: url('./pika_scaled_title_back.png'); 
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat; 
+            color: black;
+            margin: 0 auto; 
+            padding: 50px; 
+            text-align: center; 
+            border-radius: 10px;"><center><h1 style="font-size: 54px;"><b><i>Part 1: Web Scrapping</i></b></h1></center>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>The first step is to extract various values from the raw HTML files. You can use BeautifulSoup or other Python modules.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h3><blockquote>
+<center><h1>🔹 🔹 🅐 🔹 🔹</h1></center>
+<p>From all the iOS pages (ending with <strong>“_ios.html”</strong>), extract (i) number of customer ratings in the Current Version (let’s call it <em>ios_current_ratings</em>); and (ii) number of customer ratings in All Versions (<em>ios_all_ratings</em>). For example, the extracted values should be:</p>
+<center><i>4688, 106508</i></center> for the file: <center><b>“2016-07-21/00_00_pokemon_ios.html”</b></center>
+<p>There are 2 values from iOS pages.</p>
 </blockquote>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">file_names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">current_ratings</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">all_ratings</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">data_folders</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="n">folder</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_ios.html"</span><span class="p">):</span>
-            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
-            
-            <span class="c1"># Parse HTML</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-                <span class="c1"># file_name</span>
-                <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-                <span class="n">file_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">)</span>
-                
-                <span class="c1"># ios_current_ratings</span>
-                <span class="n">curr_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Current Version:"</span><span class="p">)</span>
-                <span class="n">current_ratings_div</span> <span class="o">=</span> <span class="n">curr_ratings_div</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"rating-count"</span><span class="p">)</span> <span class="k">if</span> <span class="n">curr_ratings_div</span> <span class="k">else</span> <span class="kc">None</span>
-                <span class="n">ios_current_value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">current_ratings_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span> <span class="k">if</span> <span class="n">current_ratings_div</span> <span class="k">else</span> <span class="kc">None</span>
-                <span class="n">current_ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ios_current_value</span><span class="p">)</span>
-                
-                <span class="c1"># ios_all_ratings</span>
-                <span class="n">all_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"All Versions:"</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"rating-count"</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">all_ratings_div</span><span class="p">:</span>
-                    <span class="n">all_ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">all_ratings_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)))</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">all_ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-
-<span class="n">ios_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"ios_current_ratings"</span> <span class="p">:</span> <span class="n">current_ratings</span><span class="p">,</span>
-    <span class="s2">"ios_all_ratings"</span> <span class="p">:</span> <span class="n">all_ratings</span>
-    <span class="p">},</span> <span class="n">index</span> <span class="o">=</span> <span class="n">file_names</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># helper function to parse iOS html file</span>
+<span class="k">def</span> <span class="nf">parse_ios_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+        
+        <span class="c1"># ios_current_ratings</span>
+        <span class="n">curr_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s2">"Current Version:"</span><span class="p">)</span>
+        <span class="n">curr_ratings_span</span> <span class="o">=</span> <span class="n">curr_ratings_div</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"rating-count"</span><span class="p">)</span> <span class="k">if</span> <span class="n">curr_ratings_div</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">ios_current_ratings</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">curr_ratings_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span> <span class="k">if</span> <span class="n">curr_ratings_span</span> <span class="k">else</span> <span class="kc">None</span>
+        
+        <span class="c1"># ios_all_ratings</span>
+        <span class="n">all_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s2">"All Versions:"</span><span class="p">)</span>
+        <span class="n">all_ratings_span</span> <span class="o">=</span> <span class="n">all_ratings_div</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"rating-count"</span><span class="p">)</span>
+        <span class="n">ios_all_ratings</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">all_ratings_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span> <span class="k">if</span> <span class="n">all_ratings_span</span> <span class="k">else</span> <span class="kc">None</span>
+        
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"ios_current_ratings"</span><span class="p">:</span> <span class="n">ios_current_ratings</span><span class="p">,</span> <span class="s2">"ios_all_ratings"</span><span class="p">:</span> <span class="n">ios_all_ratings</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3926646783.py:17: DeprecationWarning: The 'text' argument to find()-type methods is deprecated. Use 'string' instead.
-  curr_ratings_div = soup.find("div", text="Current Version:")
-C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3926646783.py:23: DeprecationWarning: The 'text' argument to find()-type methods is deprecated. Use 'string' instead.
-  all_ratings_div = soup.find("div", text="All Versions:").find_next("span", class_="rating-count")
-</pre>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ios_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># pull ios html data using parse_ios_html()</span>
+<span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">data_folders</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_ios.html"</span><span class="p">):</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="n">rating</span> <span class="o">=</span> <span class="n">parse_ios_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">ios_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ios_index</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ios_dict</span><span class="p">:</span> <span class="n">ios_dict</span><span class="p">[</span><span class="n">ios_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">rating</span>
+            <span class="n">ios_dict</span><span class="p">[</span><span class="n">ios_index</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">parse_ios_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+
+<span class="c1"># construct data frame</span>
+<span class="n">ios_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">ios_dict</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s2">"index"</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -7613,7 +7621,7 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3926646783.py:23: Deprecati
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ios_data</span>
@@ -7627,7 +7635,7 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3926646783.py:23: Deprecati
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7720,7 +7728,7 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3926646783.py:23: Deprecati
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ios_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -7755,12 +7763,11 @@ memory usage: 37.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Comparing with expected answer</span>
-<span class="n">ios_test_expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4688</span><span class="p">,</span> <span class="mi">106508</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">ios_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2016-07-21/00_00_pokemon_ios.html'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">ios_test_expected</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare with expected answers</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">ios_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2016-07-21/00_00_pokemon_ios.html'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4688</span><span class="p">,</span> <span class="mi">106508</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -7779,6 +7786,34 @@ memory usage: 37.1+ KB
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ios_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2016-07-21/00_00_pokemon_ios.html'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>ios_current_ratings      4688.0
+ios_all_ratings        106508.0
+Name: 2016-07-21/00_00_pokemon_ios.html, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7786,8 +7821,13 @@ memory usage: 37.1+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%85%91">🅑<a class="anchor-link" href="#%F0%9F%85%91">¶</a></h1><blockquote>
-<p>From all the Android pages (ending with “_android.html”), extract (i) average rating (in the scale between 1.0 and 5.0) (android_avg_rating); (ii) number of total ratings (android_total_ratings); and (iii) number of ratings for 1-5 stars (android_ratings_1, android_ratings_2, …, android_ratings_5). For example, the extracted values should be: 3.9, 1281802, 199974, 71521, 117754, 165956, 726597 for the “2016-07-21/00_00_pokemon_android.html” file. There are 7 values from Android pages.</p>
+<h2 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h2><blockquote>
+<center><h1>🔹 🔹 🅑 🔹 🔹</h1></center>
+<p>From all the Android pages (ending with <strong>“_android.html”</strong>), extract (i) average rating (in the scale between 1.0 and 5.0) (<em>android_avg_rating</em>); (ii) number of total ratings (<em>android_total_ratings</em>); and (iii) number of ratings for 1-5 stars (<em>android_ratings_1</em>, <em>android_ratings_2</em>, …, <em>android_ratings_5</em>). For example, the extracted values should be:</p>
+<center><i>3.9, 1281802, 199974, 71521, 117754, 165956, 726597</i></center>
+<p>for the file:</p>
+<center><b>“2016-07-21/00_00_pokemon_android.html”</b></center>
+<p>There are 7 values from Android pages.</p>
 </blockquote>
 </div>
 </div>
@@ -7797,50 +7837,65 @@ memory usage: 37.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">file_names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">android_avg_ratings</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">android_total_ratings</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">android_star_ratings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'one'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'two'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'three'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'four'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'five'</span> <span class="p">:</span> <span class="p">[]}</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># helper function to parse android html file</span>
+<span class="k">def</span> <span class="nf">parse_android_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">android_star_ratings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'one'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'two'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'three'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'four'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'five'</span> <span class="p">:</span> <span class="p">[]}</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+        
+        <span class="c1"># android_avg_rating</span>
+        <span class="n">avg_rating_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"score"</span><span class="p">)</span>
+        <span class="n">android_avg_rating</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">avg_rating_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        
+        <span class="c1"># android_total_ratings</span>
+        <span class="n">total_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"reviews-num"</span><span class="p">)</span>
+        <span class="n">android_total_rating</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_ratings_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        
+        <span class="c1"># android_ratings_[1 through 5]</span>
+        <span class="k">for</span> <span class="n">star_val</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">android_star_ratings</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">star_rating_span</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="sa">f</span><span class="s2">"rating-bar-container </span><span class="si">{</span><span class="n">star_val</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"bar-number"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">star_rating_span</span><span class="p">:</span>
+                <span class="n">android_star_ratings</span><span class="p">[</span><span class="n">star_val</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">star_rating_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">android_star_ratings</span><span class="p">[</span><span class="n">star_val</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"android_avg_rating"</span> <span class="p">:</span> <span class="n">android_avg_rating</span><span class="p">,</span>
+                <span class="s2">"android_total_ratings"</span> <span class="p">:</span> <span class="n">android_total_rating</span><span class="p">,</span>
+                <span class="s2">"android_ratings_1"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"one"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s2">"android_ratings_2"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"two"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s2">"android_ratings_3"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"three"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s2">"android_ratings_4"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"four"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s2">"android_ratings_5"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"five"</span><span class="p">][</span><span class="mi">0</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">android_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
+<span class="c1"># pull parsed android html data</span>
 <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">data_folders</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="n">folder</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_android.html"</span><span class="p">):</span>
-            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
-            
-            <span class="c1"># Parse HTML</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-                <span class="c1"># file_name</span>
-                <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-                <span class="n">file_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">)</span>
-                
-                <span class="c1"># android_avg_rating</span>
-                <span class="n">avg_rating_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"score"</span><span class="p">)</span>
-                <span class="n">android_avg_ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">avg_rating_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
-                
-                <span class="c1"># android_total_ratings</span>
-                <span class="n">total_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"reviews-num"</span><span class="p">)</span>
-                <span class="n">android_total_ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">total_ratings_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
-                
-                <span class="c1"># android_ratings_[1 through 5]</span>
-                <span class="k">for</span> <span class="n">star_val</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">android_star_ratings</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-                    <span class="n">star_rating_span</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="sa">f</span><span class="s2">"rating-bar-container </span><span class="si">{</span><span class="n">star_val</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"bar-number"</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">star_rating_span</span><span class="p">:</span>
-                        <span class="n">android_star_ratings</span><span class="p">[</span><span class="n">star_val</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">star_rating_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">android_star_ratings</span><span class="p">[</span><span class="n">star_val</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_android.html"</span><span class="p">):</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="n">rating</span> <span class="o">=</span> <span class="n">parse_android_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">android_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">android_index</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">android_dict</span><span class="p">:</span> <span class="n">android_dict</span><span class="p">[</span><span class="n">android_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">rating</span>
+            <span class="n">android_dict</span><span class="p">[</span><span class="n">android_index</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">parse_android_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
 
-<span class="n">android_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-                                <span class="s2">"android_avg_rating"</span><span class="p">:</span> <span class="n">android_avg_ratings</span><span class="p">,</span>
-                                <span class="s2">"android_total_ratings"</span><span class="p">:</span> <span class="n">android_total_ratings</span><span class="p">,</span>
-                                <span class="s2">"android_ratings_1"</span><span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s1">'one'</span><span class="p">],</span>
-                                <span class="s2">"android_ratings_2"</span><span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s1">'two'</span><span class="p">],</span>
-                                <span class="s2">"android_ratings_3"</span><span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s1">'three'</span><span class="p">],</span>
-                                <span class="s2">"android_ratings_4"</span><span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s1">'four'</span><span class="p">],</span>
-                                <span class="s2">"android_ratings_5"</span><span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s1">'five'</span><span class="p">]</span>
-                                <span class="p">},</span> <span class="n">index</span> <span class="o">=</span> <span class="n">file_names</span><span class="p">)</span>
+<span class="c1"># constructing data frame with values from parsed android html</span>
+<span class="n">android_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">android_dict</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s2">"index"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7851,7 +7906,7 @@ memory usage: 37.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">android_data</span>
@@ -7865,7 +7920,7 @@ memory usage: 37.1+ KB
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8018,7 +8073,7 @@ memory usage: 37.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">android_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -8058,12 +8113,44 @@ memory usage: 99.0+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Comparing with expected answer</span>
-<span class="n">android_test_expected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span> <span class="mi">1281802</span><span class="p">,</span> <span class="mi">199974</span><span class="p">,</span> <span class="mi">71521</span><span class="p">,</span> <span class="mi">117754</span><span class="p">,</span> <span class="mi">165956</span><span class="p">,</span> <span class="mi">726597</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">android_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2016-07-21/00_00_pokemon_android.html'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">android_test_expected</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">android_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2016-07-21/00_00_pokemon_android.html'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>android_avg_rating             3.9
+android_total_ratings    1281802.0
+android_ratings_1         199974.0
+android_ratings_2          71521.0
+android_ratings_3         117754.0
+android_ratings_4         165956.0
+android_ratings_5         726597.0
+Name: 2016-07-21/00_00_pokemon_android.html, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare with expected values</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">android_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2016-07-21/00_00_pokemon_android.html'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="p">[</span><span class="mf">3.9</span><span class="p">,</span> <span class="mi">1281802</span><span class="p">,</span> <span class="mi">199974</span><span class="p">,</span> <span class="mi">71521</span><span class="p">,</span> <span class="mi">117754</span><span class="p">,</span> <span class="mi">165956</span><span class="p">,</span> <span class="mi">726597</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -8089,9 +8176,58 @@ memory usage: 99.0+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Part-2:-Data-Organization">Part 2: Data Organization<a class="anchor-link" href="#Part-2:-Data-Organization">¶</a></h2><p>The next step is to organize the extracted values, so that we can do some data exploration. As we have time series data, we will organize the data by <em>datetime</em> (note that <em>datetime</em> is a Python data type).</p>
-<h1 id="%F0%9F%85%90">🅐<a class="anchor-link" href="#%F0%9F%85%90">¶</a></h1><blockquote>
-<p>Using the extracted values from the previous step, create a Python dictionary, where the key is <em>datetime</em> object and the value is a dictionary with extracted values from iOS and Android HTML files. For example, for the case of “<em>2016-07-21-00_00_pokemon_android.html</em>” file and “<em>2016-07-21/00_00_pokemon_ios.html</em>” file, the key should be <em>datetime(2016, 7, 21, 0, 0, 0)</em> and the value should be: { <em>‘ios_current_ratings’</em> : <em>4688</em>, <em>‘ios_all_ratings’</em> : <em>106508</em>, <em>‘android_avg_rating’</em> : <em>3.9</em>, <em>‘android_total_ratings’</em> : <em>1281802</em>, <em>‘android_rating_1’</em> : <em>199974</em>, <em>‘android_rating_2’</em> : <em>71512</em>, <em>‘android_rating_3’</em> : <em>117754</em>, <em>‘android_rating_4’</em> : <em>165956</em>, <em>‘android_rating_5’</em> : <em>726597</em> }</p>
+<h2 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h2><hr/>
+<h2 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="background-image: url('./char_background_2.png'); 
+            background-size: 85%;
+            background-position: center;
+            background-repeat: no-repeat; 
+            color: black;
+            margin: 0 auto; 
+            padding: 40px; 
+            text-align: center; 
+            border-radius: 10px;"><h1 style="font-size: 54px;"><b><i>Part 2: Data Organization</i></b></h1></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>The next step is to organize the extracted values, so that we can do some data exploration. As we have time series data, we will organize the data by <em>datetime</em> (note that <em>datetime</em> is a Python data type).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h2><blockquote>
+<center><h1>🔹 🔹 🅐 🔹 🔹</h1></center>
+<p>Using the extracted values from the previous step, create a Python dictionary, where the key is <em>datetime</em> object and the value is a dictionary with extracted values from iOS and Android HTML files. For example, for flies:</p>
+<center><b>“2016-07-21-00_00_pokemon_android.html”</b> and <b>“2016-07-21/00_00_pokemon_ios.html”</b></center>
+<p>the key should be:</p>
+<center><i>datetime(2016, 7, 21, 0, 0, 0)</i></center>
+<p>and the value should be:</p>
+<center><i>{ ‘ios_current_ratings’ : 4688, ‘ios_all_ratings’ : 106508, ‘android_avg_rating’ : 3.9, ‘android_total_ratings’ : 1281802, ‘android_rating_1’ : 199974, ‘android_rating_2’ : 71512, ‘android_rating_3’ : 117754, ‘android_rating_4’ : 165956, ‘android_rating_5’ : 726597}</i></center>
 </blockquote>
 </div>
 </div>
@@ -8101,94 +8237,35 @@ memory usage: 99.0+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># iOS HTML file</span>
-<span class="k">def</span> <span class="nf">parse_ios_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-        
-        <span class="c1"># ios_current_ratings</span>
-        <span class="n">curr_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Current Version:"</span><span class="p">)</span>
-        <span class="n">curr_ratings_span</span> <span class="o">=</span> <span class="n">curr_ratings_div</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"rating-count"</span><span class="p">)</span> <span class="k">if</span> <span class="n">curr_ratings_div</span> <span class="k">else</span> <span class="kc">None</span>
-        <span class="n">ios_current_ratings</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">curr_ratings_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span> <span class="k">if</span> <span class="n">curr_ratings_span</span> <span class="k">else</span> <span class="kc">None</span>
-        
-        <span class="c1"># ios_all_ratings</span>
-        <span class="n">all_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"All Versions:"</span><span class="p">)</span>
-        <span class="n">all_ratings_span</span> <span class="o">=</span> <span class="n">all_ratings_div</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"rating-count"</span><span class="p">)</span>
-        <span class="n">ios_all_ratings</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">all_ratings_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span> <span class="k">if</span> <span class="n">all_ratings_span</span> <span class="k">else</span> <span class="kc">None</span>
-        
-        <span class="k">return</span> <span class="p">{</span><span class="s2">"ios_current_ratings"</span><span class="p">:</span> <span class="n">ios_current_ratings</span><span class="p">,</span> <span class="s2">"ios_all_ratings"</span><span class="p">:</span> <span class="n">ios_all_ratings</span><span class="p">}</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># directly constructing dict using previous helper functions parse_ios_html/parse_android_html</span>
+<span class="n">datetime_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="c1"># Android HTML file</span>
-<span class="k">def</span> <span class="nf">parse_android_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-    <span class="n">android_star_ratings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'one'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'two'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'three'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'four'</span> <span class="p">:</span> <span class="p">[],</span> <span class="s1">'five'</span> <span class="p">:</span> <span class="p">[]}</span>
-    
-    <span class="c1"># Parse HTML</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-        
-        <span class="c1"># android_avg_rating</span>
-        <span class="n">avg_rating_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"score"</span><span class="p">)</span>
-        <span class="n">android_avg_rating</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">avg_rating_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-        
-        <span class="c1"># android_total_ratings</span>
-        <span class="n">total_ratings_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"reviews-num"</span><span class="p">)</span>
-        <span class="n">android_total_ratings</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_ratings_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-        
-        <span class="c1"># android_ratings_[1 through 5]</span>
-        <span class="k">for</span> <span class="n">star_val</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">android_star_ratings</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-            <span class="n">star_rating_span</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="sa">f</span><span class="s2">"rating-bar-container </span><span class="si">{</span><span class="n">star_val</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"bar-number"</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">star_rating_span</span><span class="p">:</span>
-                <span class="n">android_star_ratings</span><span class="p">[</span><span class="n">star_val</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">star_rating_span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">android_star_ratings</span><span class="p">[</span><span class="n">star_val</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="p">{</span><span class="s2">"android_avg_rating"</span> <span class="p">:</span> <span class="n">android_avg_rating</span><span class="p">,</span>
-                <span class="s2">"android_total_ratings"</span> <span class="p">:</span> <span class="n">android_total_ratings</span><span class="p">,</span>
-                <span class="s2">"android_ratings_1"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"one"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                <span class="s2">"android_ratings_2"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"two"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                <span class="s2">"android_ratings_3"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"three"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                <span class="s2">"android_ratings_4"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"four"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                <span class="s2">"android_ratings_5"</span> <span class="p">:</span> <span class="n">android_star_ratings</span><span class="p">[</span><span class="s2">"five"</span><span class="p">][</span><span class="mi">0</span><span class="p">]}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">datetime_dict</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1"># Main loop to process files</span>
 <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">data_folders</span><span class="p">:</span>
-    <span class="n">folder_date</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
-    
     <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="n">folder</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_ios.html"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_android.html"</span><span class="p">):</span>
+            
+            <span class="c1"># assigning specific datetime index from file_name</span>
             <span class="n">time_str</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
             <span class="n">time_str</span> <span class="o">=</span> <span class="s2">"-"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">time_str</span><span class="p">)</span>
-            
-            <span class="n">date_time_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">folder_date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">time_str</span><span class="si">}</span><span class="s2">"</span>
+            <span class="n">date_str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+            <span class="n">date_time_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">date_str</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">time_str</span><span class="si">}</span><span class="s2">"</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">dt_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_time_str</span><span class="p">,</span> <span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">-%H-%M"</span><span class="p">)</span>
-            <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error parsing datetime from filename </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ValueError: Error parsing datetime from filename </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
                 <span class="k">continue</span>
             
+            <span class="c1"># ios handling</span>
             <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
-            
             <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_ios.html"</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">dt_obj</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datetime_dict</span><span class="p">:</span>
                     <span class="n">datetime_dict</span><span class="p">[</span><span class="n">dt_obj</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
                 <span class="n">datetime_dict</span><span class="p">[</span><span class="n">dt_obj</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">parse_ios_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+                    
+            <span class="c1"># android handling</span>
             <span class="k">elif</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"_android.html"</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">dt_obj</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datetime_dict</span><span class="p">:</span>
                     <span class="n">datetime_dict</span><span class="p">[</span><span class="n">dt_obj</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -8198,31 +8275,15 @@ memory usage: 99.0+ KB
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:7: DeprecationWarning: The 'text' argument to find()-type methods is deprecated. Use 'string' instead.
-  curr_ratings_div = soup.find("div", text="Current Version:")
-C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: DeprecationWarning: The 'text' argument to find()-type methods is deprecated. Use 'string' instead.
-  all_ratings_div = soup.find("div", text="All Versions:")
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Comparing with expected answer</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare with expected values</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">checks</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">datetime_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">"ios_current_ratings"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4688</span><span class="p">,</span>
@@ -8234,10 +8295,9 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
     <span class="n">datetime_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">"android_ratings_3"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">117754</span><span class="p">,</span>
     <span class="n">datetime_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">"android_ratings_4"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">165956</span><span class="p">,</span>
     <span class="n">datetime_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">"android_ratings_5"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">726597</span><span class="p">,</span>
+    <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">datetime_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="p">]</span>
-
-<span class="c1"># assert keys are of datetime type &amp; check column values </span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">datetime_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="ow">and</span> <span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">checks</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">checks</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8263,7 +8323,8 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%85%91">🅑<a class="anchor-link" href="#%F0%9F%85%91">¶</a></h1><blockquote>
+<h2 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h2><blockquote>
+<center><h1>🔹 🔹 🅑 🔹 🔹</h1></center>
 <p>Convert the dictionary into a Pandas <em>dataframe</em>, <em>pokemon_db</em>, where the index is <em>datetime</em> and columns are names of the extracted 9 iOS/Android values.</p>
 </blockquote>
 </div>
@@ -8277,8 +8338,8 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">datetime_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">datetime_dict</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s2">"index"</span><span class="p">)</span>
-<span class="n">datetime_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemon_db</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">datetime_dict</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s2">"index"</span><span class="p">)</span>
+<span class="n">pokemon_db</span>
 </pre></div>
 </div>
 </div>
@@ -8381,8 +8442,81 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 <td>4688.0</td>
 <td>106508</td>
 </tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>2016-07-31 23:10:00</th>
+<td>3.9</td>
+<td>1954991</td>
+<td>302864</td>
+<td>101244</td>
+<td>173651</td>
+<td>259919</td>
+<td>1117313</td>
+<td>17856.0</td>
+<td>139213</td>
+</tr>
+<tr>
+<th>2016-07-31 23:20:00</th>
+<td>3.9</td>
+<td>1954991</td>
+<td>302864</td>
+<td>101244</td>
+<td>173651</td>
+<td>259919</td>
+<td>1117313</td>
+<td>22193.0</td>
+<td>143350</td>
+</tr>
+<tr>
+<th>2016-07-31 23:30:00</th>
+<td>3.9</td>
+<td>1954991</td>
+<td>302864</td>
+<td>101244</td>
+<td>173651</td>
+<td>259919</td>
+<td>1117313</td>
+<td>22193.0</td>
+<td>143350</td>
+</tr>
+<tr>
+<th>2016-07-31 23:40:00</th>
+<td>3.9</td>
+<td>1954991</td>
+<td>302864</td>
+<td>101244</td>
+<td>173651</td>
+<td>259919</td>
+<td>1117313</td>
+<td>22193.0</td>
+<td>143350</td>
+</tr>
+<tr>
+<th>2016-07-31 23:50:00</th>
+<td>3.9</td>
+<td>1954991</td>
+<td>302864</td>
+<td>101244</td>
+<td>173651</td>
+<td>259919</td>
+<td>1117313</td>
+<td>22193.0</td>
+<td>143350</td>
+</tr>
 </tbody>
 </table>
+<p>1584 rows × 9 columns</p>
 </div>
 </div>
 </div>
@@ -8393,11 +8527,17 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Comparing with expected answer</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">datetime_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">datetime_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">list</span><span class="p">(</span><span class="n">datetime_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">android_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ios_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare with expected answer</span>
+<span class="n">checks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nb">isinstance</span><span class="p">(</span><span class="n">pokemon_db</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">),</span> <span class="c1"># checking if table is pandas dataframe</span>
+    <span class="nb">isinstance</span><span class="p">(</span><span class="n">pokemon_db</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">),</span> <span class="c1"># check if table index values are DatetimeIndex objects</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">pokemon_db</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">9</span><span class="p">,</span> <span class="c1"># should have exactly 9 cols</span>
+    <span class="nb">list</span><span class="p">(</span><span class="n">pokemon_db</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">android_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ios_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="c1"># ensuring got all cols from ios/android</span>
+    <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">checks</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8407,10 +8547,11 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>True</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>True
+</pre>
 </div>
 </div>
 </div>
@@ -8422,8 +8563,10 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%85%92">🅒<a class="anchor-link" href="#%F0%9F%85%92">¶</a></h1><blockquote>
-<p>Save the dataframe into two formats (CSV and Excel). The file names should be <em>pokemon.csv</em> and <em>pokemon.xlsx</em>.</p>
+<h2 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h2><blockquote>
+<center><h1>🔹 🔹 🅒 🔹 🔹</h1></center>
+<p>Save the dataframe into two formats (CSV and Excel). The file names should be</p>
+<center><b>"pokemon.csv"</b> and <b>"pokemon.xlsx"</b>.</center>
 </blockquote>
 </div>
 </div>
@@ -8433,17 +8576,82 @@ C:\Users\sar-home\AppData\Local\Temp\ipykernel_47112\3960709705.py:12: Deprecati
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">datetime_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"pokemon.csv"</span><span class="p">)</span>
-<span class="n">datetime_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"pokemon.xlsx"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemon_db</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"pokemon.csv"</span><span class="p">)</span>
+<span class="n">pokemon_db</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"pokemon.xlsx"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</main>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># confirm files were created</span>
+<span class="n">checks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"pokemon.csv"</span><span class="p">),</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"pokemon.xlsx"</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">checks</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>True
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%E2%80%8E">‎<a class="anchor-link" href="#%E2%80%8E">¶</a></h3><hr/>
+<hr/>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+</div>
+</div>
+</div>
+</div>
+</div></main>
 </body>
 </html>
